@@ -20,4 +20,6 @@ target_compile_features(archimedes PUBLIC c_std_11)
 
 add_library(archimedes::archimedes ALIAS archimedes)
 
+enable_testing()
+
 add_subdirectory(tests)
