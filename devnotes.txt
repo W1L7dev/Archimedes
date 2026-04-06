@@ -1,0 +1,10 @@
+Building with CMake -> Unix Makefiles (into Docker)
+Changelog w/ keepachangelog.com 1.1.0
+Sementic Versionning: semver.org 2.0.0
+Python formatting:
+- Black: general formatting
+- Isort: imports formatting
+- Mypy: static type checker
+C formatting
+- Clangd: general formatting
+* editorconfig for cross-editor support
