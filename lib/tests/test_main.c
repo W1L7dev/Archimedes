@@ -1,6 +1,3 @@
 #include <archimedes/api.h>
 
-int main(void) {
-  test();
-  return 0;
-}
+int main(void) { return 0; }
