@@ -12,6 +12,7 @@
 
 #include <stdint.h>
 
+// Integer definitions
 /**
  * @brief Unsigned 8 bit integer, equates to an `unsigned char`.
  */
@@ -45,5 +46,20 @@ typedef int32_t arc_std_sint32_t;
  * @brief Signed 64 bit integer, equates to a `long`.
  */
 typedef int64_t arc_std_sint64_t;
+
+// Character definitions
+/**
+ * @brief Unsigned 8 bit integer, equates to an `unsigned char`.
+ */
+typedef arc_std_uint8_t arc_std_uc_t;
+/**
+ * @brief Signed 8 bit integer, equates to an `signed char`.
+ */
+typedef arc_std_sint8_t arc_std_sc_t;
+/**
+ * @brief 8 bit integer, equates to an `char`. Signedness matches that of
+ * `char`.
+ */
+typedef char arc_std_c_t;
 
 #endif /* ARCHIMEDES__STD_INT__ */

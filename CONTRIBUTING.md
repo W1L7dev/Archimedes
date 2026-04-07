@@ -27,9 +27,43 @@ You must own a GitHub account in order to contribute to this project. Once you h
 - Avoid trailing whitespaces
 - All files should end with a trailing blank line
 
+### General File Naming
+
+File names should be all lowercases and include underscores (_) to separate words. This holds true for directory names.
+
+C++ source files should have a `.cc` filename extension, and header files should have a `.hh` extension; C source files should have a `.c` extension, header files should have a `.h` extension. Files that rely on being textually included at specific points should have a `.inc` extension. Python files should have a `.py` extension.
+
+Do not use filenames that already exist in `/usr/include`, such as `db.h`.
+
+In general, make your filenames very specific. For example, use `http_server_logs.h` rather than `logs.h`.
+
 ## C/C++
 
 ### C/C++ Naming Conventions
+
+All public header names should start with `arc_` or `ARC_` and include the module in the same format. For example, the macro `MACRO` in the public header `file.h` in the `mod` module should be named `ARC_MOD_MACRO`.
+
+### Header Files
+
+In general, every `.c` or `.cc` file should have an associated `.h` or `.hh` file. There are some common exceptions, such as unit tests and small files containing just a `main()` function.
+
+Correct use of header files can make a huge difference to the readability, size and performance of your code.
+
+The following rules will guide you through the various pitfalls of using header files.
+
+#### Include Guard
+
+All header files should have an include guard to prevent multiple inclusion. It should be formatted as `{PROJECT}\_\_{MODULE}_{FILE}\_H\_\_`.
+
+To guarantee uniqueness, they should be based on the full path in a project's source tree. For example, the file at `archimedes_lib/src/chem/utils.h` (note that the project is simply named *archimedes*) should have the following guard:
+```c
+#ifndef ARCHIMEDES__CHEM_UTILS_H__
+#define ARCHIMEDES__CHEM_UTILS_H__
+
+...
+
+#endif /* ARCHIMEDES__CHEM_UTILS_H__ */
+```
 
 ### C/C++ Formatting
 

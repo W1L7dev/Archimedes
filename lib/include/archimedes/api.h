@@ -29,4 +29,9 @@ typedef arc_std_sint32_t arc_out;
  */
 #define ARC_FAILURE 0
 
+/**
+ * @brief Null pointer.
+ */
+#define ARC_NULL (void *)0
+
 #endif /* ARCHIMEDES__API_H__ */

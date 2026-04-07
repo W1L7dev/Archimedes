@@ -14,19 +14,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef size_t arc_size_t;
+typedef size_t arc_std_size_t;
 
 /**
  * @param s Size of block to allocate.
- * @return Pointer to the allocated block.
+ * @return Pointer to the allocated block or null if there allocation failed.
  */
-static inline void *arc_malloc(arc_size_t s) { return malloc(s); }
+static inline void *arc_std_malloc(arc_std_size_t s) { return malloc(s); }
 /**
+ * @brief Allocates memory for `n` blocks of size `s`; the block is zeroed.
  * @param n Number of blocks to allocate.
  * @param s Size of block.
  * @return Pointer to the allocated block.
  */
-static inline void *arc_calloc(arc_size_t n, arc_size_t s) {
+static inline void *arc_std_calloc(arc_std_size_t n, arc_std_size_t s) {
   return calloc(n, s);
 }
 /**
@@ -34,8 +35,14 @@ static inline void *arc_calloc(arc_size_t n, arc_size_t s) {
  * @param s New size of block.
  * @return Pointer to the allocated block.
  */
-static inline void *arc_realloc(void *ptr, arc_size_t s) {
+static inline void *arc_std_realloc(void *ptr, arc_std_size_t s) {
   return realloc(ptr, s);
 }
+
+/**
+ * @brief Free a block allocated by `malloc`, `calloc`, or `realloc`.
+ * @param ptr Pointer to the block to freed.
+ */
+static inline void arc_std_free(void *ptr) { free(ptr); }
 
 #endif /* ARCHIMEDES__STD_HEAP_H__ */

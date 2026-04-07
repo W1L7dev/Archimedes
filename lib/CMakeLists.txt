@@ -11,8 +11,24 @@ add_library(archimedes)
 
 target_sources(
   archimedes
-  PRIVATE src/api.c
-  PUBLIC FILE_SET HEADERS BASE_DIRS include FILES include/archimedes/api.h)
+  PRIVATE src/chem/chem.c src/err/err.c src/test/test.c
+  PUBLIC FILE_SET
+         HEADERS
+         BASE_DIRS
+         include
+         FILES
+         include/archimedes/std/exit.h
+         include/archimedes/std/heap.h
+         include/archimedes/std/int.h
+         include/archimedes/std/mem.h
+         include/archimedes/std/varg.h
+         include/archimedes/std/print.h
+         include/archimedes/chem/chem.h
+         include/archimedes/chem/mol_utils.h
+         include/archimedes/err/codes.inc
+         include/archimedes/err/err.h
+         include/archimedes/test/test.h
+         include/archimedes/api.h)
 
 target_include_directories(
   archimedes PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
