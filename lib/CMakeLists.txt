@@ -31,7 +31,10 @@ target_sources(
          include/archimedes/api.h)
 
 target_include_directories(
-  archimedes PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+  archimedes
+  PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+         $<INSTALL_INTERFACE:include>
+  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 target_compile_features(archimedes PUBLIC c_std_11)
 

@@ -9,6 +9,7 @@
 arc_test_out_t main(void) {
   arc_test_start();
 
+  // TODO: fix printf
   arc_std_printf("test");
 
   arc_err_code_t start_value = arc_err_get();
